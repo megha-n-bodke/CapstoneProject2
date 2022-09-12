@@ -1,1 +1,1 @@
-# CapstoneProject2
+# webpack-boilerplate
