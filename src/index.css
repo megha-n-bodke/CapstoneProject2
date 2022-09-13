@@ -31,4 +31,9 @@ footer {
   opacity: 1;
 }
 
+.vertical-line {
+  border-right: 2px solid #fff;
+  margin: 0 6px 0 4px;
+}
+
 /* ==========End of footer section========== */
