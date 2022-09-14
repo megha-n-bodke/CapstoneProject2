@@ -1,11 +1,14 @@
-import { baseUrl, singlecard } from './getElements.js';
+import { singlecard } from './getElements.js';
+import getMealsFromApi from './getMealsFromApi.js';
+import popupDisplay from './popupDisplay.js';
 
 const display = async () => {
   try {
-    console.log('inside display');
-    const response = await fetch(baseUrl);
+    // console.log('inside display');
+    // const response = await fetch(baseUrl);
 
-    const { meals } = await response.json();
+    const { meals } = await getMealsFromApi();
+    // const { meals } = await response.json();
     // console.log(meals);
 
     meals.map((dish) => {
@@ -67,8 +70,9 @@ const display = async () => {
 
       return dish;
     });
+    popupDisplay();
   } catch (error) {
-    console.error(error.message);
+    // console.error(error.message);
   }
 };
 
