@@ -17,8 +17,7 @@ const display = async () => {
       columnsDiv.className = 'col-md-4';
 
       const card = document.createElement('div');
-      card.className = 'card';
-      card.className = 'p-3';
+      card.className = 'card p-2 my-3 ';
 
       const img = document.createElement('img');
       img.className = 'card-img-top';
@@ -33,8 +32,7 @@ const display = async () => {
       dishNamePara.innerText = strMeal;
 
       const cardLikesDiv = document.createElement('div');
-      cardLikesDiv.className = 'd-flex';
-      // cardLikesDiv.className = "justify-content-between";
+      cardLikesDiv.className = 'd-flex justify-content-between';
 
       // div for likes
       const cardNameLikesDiv = document.createElement('div');
@@ -47,11 +45,9 @@ const display = async () => {
       // button div
       const buttonDiv = document.createElement('div');
       const commentBtn = document.createElement('button');
-      buttonDiv.className = 'card-buttons';
-      commentBtn.className = 'btn';
-      commentBtn.className = 'btn-secondary';
+      buttonDiv.className = 'card-actions';
+      commentBtn.className = 'btn btn-secondary';
 
-      commentBtn.className = 'w-25';
       commentBtn.innerText = 'Comments';
 
       dishNamePara.innerText = strMeal;
@@ -63,8 +59,8 @@ const display = async () => {
       cardLikesDiv.appendChild(dishNamePara);
 
       cardLikesDiv.appendChild(cardNameLikesDiv);
-      cardNameLikesDiv.appendChild(likesPara);
       cardNameLikesDiv.appendChild(heart);
+      cardNameLikesDiv.appendChild(likesPara);
 
       card.appendChild(buttonDiv);
       buttonDiv.appendChild(commentBtn);
