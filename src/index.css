@@ -1,1 +1,6 @@
-
+.logo-div {
+  background-image: url("../images/logo2.png");
+  background-size: 100% 100%;
+  height: 70px;
+  width: 200px;
+}
