@@ -1,6 +1,7 @@
 import getMealsFromApi from './getMealsFromApi.js';
 import postComment from './postComment.js';
 import fetchComment from './fetchComment.js';
+import countComments from './countComments.js';
 
 const popImage = document.querySelector('.meal-img');
 const category = document.querySelector('.category');
@@ -35,6 +36,8 @@ async function populatePopupWindow(index) {
     document.querySelector('#textarea').value = '';
   });
   const comments = await fetchComment(itemId);
+  const numberOfComments = document.querySelector('.count-comments');
+  numberOfComments.innerHTML = `(${countComments(comments)})`;
   const commentDiv = document.querySelector('.show-comments');
 
   if (comments.length > 0) {
