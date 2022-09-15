@@ -1,5 +1,6 @@
 import getMealsFromApi from './getMealsFromApi.js';
 import postComment from './postComment.js';
+import fetchComment from './fetchComment.js';
 
 const popImage = document.querySelector('.meal-img');
 const category = document.querySelector('.category');
@@ -16,8 +17,8 @@ async function populatePopupWindow(index) {
   category.innerHTML = `Category : ${data[index].strCategory}`;
   country.innerHTML = `Area : ${data[index].strArea}`;
 
-  // const itemId = object[index].idMeal;
-  // console.log(itemId);
+  const itemId = data[index].idMeal;
+  console.log(itemId);
   submitCommit.id = `${data[index].idMeal}`;
 
   submitCommit.addEventListener('click', async (e) => {
@@ -25,15 +26,16 @@ async function populatePopupWindow(index) {
     const username = document.querySelector('#name').value;
     const comment = document.querySelector('#textarea').value;
     const itemId = e.target.id;
-    const Data = {
+    const DataComment = {
       item_id: Number(itemId),
       username,
       comment,
     };
-    postComment(Data);
+    postComment(DataComment);
     document.querySelector('#name').value = '';
     document.querySelector('#textarea').value = '';
   });
+  const comments = await fetchComment(itemId);
 }
 
 export default populatePopupWindow;
