@@ -1,6 +1,6 @@
 import getMealsFromApi from './getMealsFromApi.js';
 import postComment from './postComment.js';
-// import fetchComment from './fetchComment.js';
+import fetchComment from './fetchComment.js';
 
 const popImage = document.querySelector('.meal-img');
 const category = document.querySelector('.category');
@@ -17,6 +17,7 @@ async function populatePopupWindow(index) {
   category.innerHTML = `Category : ${data[index].strCategory}`;
   country.innerHTML = `Area : ${data[index].strArea}`;
 
+  const itemId = data[index].idMeal;
   submitCommit.id = `${data[index].idMeal}`;
 
   submitCommit.addEventListener('click', async (e) => {
@@ -33,6 +34,25 @@ async function populatePopupWindow(index) {
     document.querySelector('#name').value = '';
     document.querySelector('#textarea').value = '';
   });
+  const comments = await fetchComment(itemId);
+  const commentDiv = document.querySelector('.show-comments');
+
+  if (comments.length > 0) {
+    comments.forEach((comment) => {
+      commentDiv.innerHTML += `
+        <div class="view-comments">
+          <p class="date-comment">${comment.creation_date}</p>
+          <p class="username-comment">${comment.username}:</p>
+          <p>${comment.comment}</p>
+        </div>
+      `;
+    });
+  } else {
+    const noCommentDiv = document.createElement('p');
+    noCommentDiv.className = 'no-comment';
+    noCommentDiv.innerHTML = 'No comments Yet. Kindly add some!!';
+    commentDiv.appendChild(noCommentDiv);
+  }
 }
 
 export default populatePopupWindow;

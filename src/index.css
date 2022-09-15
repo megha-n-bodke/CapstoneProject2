@@ -130,15 +130,34 @@ body.pop {
 }
 
 .popup-comments-info {
-  width: 30%;
+  width: 70%;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.popup-comments-info p {
-  margin: 0;
+.popup-comments-info .comment-header {
+  margin-bottom: 1rem;
   font-size: 1.2rem;
   text-align: center;
+}
+
+.show-comments {
+  width: 100%;
+
+}
+
+.show-comments p {
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: center;
+  margin: 0.5px;
+}
+
+.view-comments {
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  gap: 20px;
 }
 
 .popup-add-comment {
