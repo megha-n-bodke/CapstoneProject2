@@ -1,5 +1,6 @@
 import { baseUrl, singlecard } from "./getElements.js";
 import availableDishCount from "./dishCount.js";
+import postLikes from "./postLikes.js";
 
 const display = async () => {
   try {
@@ -9,7 +10,7 @@ const display = async () => {
 
     meals.map((dish) => {
       // @sonick include idMeal in line number 12 with strMeal i have removed due to linter error.
-      const { strMeal, strMealThumb } = dish;
+      const { idMeal, strMeal, strMealThumb } = dish;
 
       const columnsDiv = document.createElement("div");
       columnsDiv.className = "col-md-4";
@@ -39,6 +40,9 @@ const display = async () => {
 
       const heart = document.createElement("i");
       heart.className = "fa fa-heart";
+      heart.addEventListener("click", () => {
+        postLikes(idMeal);
+      });
 
       // button div
       const buttonDiv = document.createElement("div");
