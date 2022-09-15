@@ -1,6 +1,6 @@
 import { involvementUrlLikes } from "./getElements.js";
 
-const postLikes = async (id) => {
+const postLikes = async (id, likesPara) => {
   try {
     await fetch(involvementUrlLikes, {
       method: "POST",
@@ -16,7 +16,6 @@ const postLikes = async (id) => {
     const likeCount = await fetch(involvementUrlLikes);
     const likes = await likeCount.json();
     const findId = likes.find((like) => like.item_id === id);
-    const likesPara = document.createElement("p");
     if (findId === undefined) {
       likesPara.innerText = "Likes 0";
     } else {
