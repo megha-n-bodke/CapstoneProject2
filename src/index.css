@@ -1,3 +1,7 @@
+body {
+  background-color: orange;
+}
+
 .logo-div {
   background-image: url("../images/logo2.png");
   background-size: 100% 100%;

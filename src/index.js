@@ -1,3 +1,7 @@
 import './index.css';
 
-console.log('webpack js');
+import display from './modules/display.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  display();
+});
