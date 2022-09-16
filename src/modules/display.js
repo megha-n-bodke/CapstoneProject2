@@ -54,6 +54,13 @@ const display = async () => {
         postLikes(idMeal, likesPara);
       });
 
+      /* const cardNameLikesDiv = document.createElement('div');
+      const likesPara = document.createElement('p');
+      likesPara.innerText = '';
+
+      const heart = document.createElement('i');
+      heart.className = 'fa fa-heart'; */
+
       // button div
       const buttonDiv = document.createElement("div");
       const commentBtn = document.createElement("button");
@@ -81,7 +88,7 @@ const display = async () => {
     });
     availableDishCount(dishCount);
   } catch (error) {
-    console.error(error.message);
+    throw new Error(error.message);
   }
 };
 
