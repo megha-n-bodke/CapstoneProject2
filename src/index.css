@@ -9,15 +9,214 @@ body {
   width: 200px;
 }
 
+/* start comment section */
+.popup-window {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  z-index: 9;
+  background-color: rgb(255, 164, 55);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out;
+  overflow-y: scroll;
+}
+
+.popup-window.pop {
+  transform: scale(1);
+  display: flex;
+}
+
+body.pop {
+  overflow-y: hidden;
+}
+
+.popup-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  gap: 12px;
+  width: 50%;
+  height: 900px;
+  border: 2px solid #ebecf0;
+  box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
+  background: #fff;
+  border-radius: 16px;
+  z-index: 3;
+  margin: 20px auto;
+}
+
+.popup-image-wrapper {
+  width: 65%;
+  height: 320px;
+  margin: 50px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.button-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 0;
+  top: 40px;
+  left: 870px;
+}
+
+#close-btn {
+  width: 40px;
+  height: 40px;
+  left: 8px;
+  top: 8px;
+  margin-top: 12px;
+}
+
+#close-btn:hover {
+  cursor: pointer;
+}
+
 /* =========footer section========= */
 
-footer {
-  position: fixed;
-  bottom: 0;
+.image-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
+}
+
+.meal-title-container {
+  width: 200px;
+  height: 40px;
+}
+
+.meal-title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin: 0;
+  text-align: center;
+}
+
+.popup-meal-features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 85%;
+}
+
+.meal-ratings {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+#video {
+  text-decoration: none;
+}
+
+#video:hover {
+  text-decoration: underline;
+}
+
+.popup-comments-info {
+  width: 30%;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.popup-comments-info p {
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.popup-add-comment {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  height: 250px;
+  margin-right: 160px;
+}
+
+#name {
+  width: 100%;
+  height: 35px;
+  font-size: 1rem;
+  padding: 8px 0 8px 8px;
+  border: 4px solid #2c3e50;
+  border-radius: 8px;
+  outline: none;
+}
+
+#textarea {
+  width: 100%;
+  height: 120px;
+  resize: none;
+  font-size: 1rem;
+  padding: 8px 0 0 8px;
+  border-radius: 8px;
+  border: 4px solid #2c3e50;
+  outline: none;
+}
+
+#comment-submit-btn {
+  width: 35%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 4px solid #2c3e50;
+  background-color: #fff;
+  font-size: 1rem;
+  box-shadow: 3px 3px;
+}
+
+#popup-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(193, 199, 208, 0.9);
+  filter: blur(4px);
+  display: none;
+  z-index: 1;
+}
+
+#popup-bg.pop {
+  display: block;
+}
+
+/* end comment popup css */
+footer {
+  position: fixed;
+  bottom: 0;
   background-color: rgb(97, 105, 112);
   min-height: auto;
   width: 100%;

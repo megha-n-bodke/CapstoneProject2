@@ -1,3 +1,4 @@
+import popupDisplay from './popupDisplay.js';
 import { baseUrl, singlecard } from './getElements.js';
 import availableDishCount from './dishCount.js';
 
@@ -65,6 +66,7 @@ const display = async () => {
       dishCount += 1;
       return dishCount;
     });
+    popupDisplay();
     availableDishCount(dishCount);
   } catch (error) {
     throw new Error(error.message);
