@@ -1,5 +1,5 @@
 const sayHello = () => {
-  alert("hello");
+  alert('hello');
 };
 
 export default sayHello;
