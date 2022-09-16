@@ -5,6 +5,10 @@
   "private": "true",
   "scripts": {
     "build": "webpack",
+<<<<<<< HEAD
+=======
+    "test": "jest",
+>>>>>>> 724060ff0eb26cd6bacb59f485d52658542b3798
     "dev": "webpack --mode development",
     "start": "webpack serve --mode development --open",
     "test": "jest"

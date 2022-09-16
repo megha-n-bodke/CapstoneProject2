@@ -1,8 +1,6 @@
 import getMealsFromApi from './getMealsFromApi.js';
-import postComment from './postComment.js';
-// import fetchComment from './fetchComment.js';
-// import countComments from './countComments.js';
 import displayFetchedComments from './displayFetchedComment.js';
+import postComment from './postComment.js';
 
 const popImage = document.querySelector('.meal-img');
 const category = document.querySelector('.category');
@@ -39,7 +37,7 @@ async function populatePopupWindow(index) {
     div.className = 'view-comments';
     const date = document.createElement('p');
     date.className = 'date-comment';
-    date.innerHTML = `${currentDate}`
+    date.innerHTML = `${currentDate}`;
     const usernameComment = document.createElement('p');
     usernameComment.className = 'username-comment';
     usernameComment.innerHTML = `${username}:`;
