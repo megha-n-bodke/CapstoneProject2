@@ -1,7 +1,7 @@
 import getMealsFromApi from './getMealsFromApi.js';
 import postComment from './postComment.js';
-import fetchComment from './fetchComment.js';
-import countComments from './countComments.js';
+// import fetchComment from './fetchComment.js';
+// import countComments from './countComments.js';
 import displayFetchedComments from './displayFetchedComment.js';
 
 const popImage = document.querySelector('.meal-img');
@@ -26,7 +26,6 @@ async function populatePopupWindow(index) {
     e.preventDefault();
     const username = document.querySelector('#name').value;
     const comment = document.querySelector('#textarea').value;
-    
     const commentDiv = document.querySelector('.show-comments');
     const itemId = e.target.id;
     const DataComment = {
@@ -34,8 +33,8 @@ async function populatePopupWindow(index) {
       username,
       comment,
     };
-    let d = new Date();
-    const currentDate = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate();
+    const d = new Date();
+    const currentDate = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
     const div = document.createElement('div');
     div.className = 'view-comments';
     const date = document.createElement('p');
@@ -46,8 +45,7 @@ async function populatePopupWindow(index) {
     usernameComment.innerHTML = `${username}:`;
     const com = document.createElement('p');
     com.innerHTML = `${comment}`;
-    div.append(date,usernameComment,com);
-    
+    div.append(date, usernameComment, com);
     commentDiv.appendChild(div);
 
     postComment(DataComment);
