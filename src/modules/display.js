@@ -1,6 +1,9 @@
+import { baseUrl, singlecard, involvementUrlLikes } from './getElements.js';
 import popupDisplay from './popupDisplay.js';
-import { baseUrl, singlecard } from './getElements.js';
 import availableDishCount from './dishCount.js';
+import postLikes from './postLikes.js';
+// import { baseUrl, singlecard } from "./getElements.js";
+// import availableDishCount from "./dishCount.js";
 
 const display = async () => {
   try {
@@ -8,9 +11,12 @@ const display = async () => {
     const { meals } = await response.json();
     let dishCount = 0;
 
+    // likes
+    const likeCount = await fetch(involvementUrlLikes);
+    const likes = await likeCount.json();
+
     meals.map((dish) => {
-      // @sonick include idMeal in line number 12 with strMeal i have removed due to linter error.
-      const { strMeal, strMealThumb } = dish;
+      const { idMeal, strMeal, strMealThumb } = dish;
 
       const columnsDiv = document.createElement('div');
       columnsDiv.className = 'col-md-4';
@@ -34,19 +40,34 @@ const display = async () => {
       cardLikesDiv.className = 'd-flex justify-content-between';
 
       // div for likes
+      const findId = likes.find((like) => like.item_id === idMeal);
+
       const cardNameLikesDiv = document.createElement('div');
       const likesPara = document.createElement('p');
-      likesPara.innerText = '';
+      if (findId === undefined) {
+        likesPara.innerText = 'Likes 0';
+      } else {
+        likesPara.innerText = `Likes ${findId.likes}`;
+      }
 
       const heart = document.createElement('i');
       heart.className = 'fa fa-heart';
+      heart.addEventListener('click', () => {
+        postLikes(idMeal, likesPara);
+      });
+
+      // const cardNameLikesDiv = document.createElement("div");
+      // const likesPara = document.createElement("p");
+      // likesPara.innerText = "";
+
+      // const heart = document.createElement("i");
+      // heart.className = "fa fa-heart";
 
       // button div
       const buttonDiv = document.createElement('div');
       const commentBtn = document.createElement('button');
       buttonDiv.className = 'card-actions';
       commentBtn.className = 'btn btn-secondary';
-
       commentBtn.innerText = 'Comments';
 
       dishNamePara.innerText = strMeal;
@@ -64,7 +85,7 @@ const display = async () => {
       card.appendChild(buttonDiv);
       buttonDiv.appendChild(commentBtn);
       dishCount += 1;
-      return dishCount;
+      return dish;
     });
     popupDisplay();
     availableDishCount(dishCount);
