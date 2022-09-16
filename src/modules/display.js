@@ -41,7 +41,6 @@ const display = async () => {
 
       // div for likes
       const findId = likes.find((like) => like.item_id === idMeal);
-
       const cardNameLikesDiv = document.createElement('div');
       const likesPara = document.createElement('p');
       if (findId === undefined) {
@@ -56,18 +55,12 @@ const display = async () => {
         postLikes(idMeal, likesPara);
       });
 
-      // const cardNameLikesDiv = document.createElement("div");
-      // const likesPara = document.createElement("p");
-      // likesPara.innerText = "";
-
-      // const heart = document.createElement("i");
-      // heart.className = "fa fa-heart";
-
       // button div
       const buttonDiv = document.createElement('div');
       const commentBtn = document.createElement('button');
       buttonDiv.className = 'card-actions';
       commentBtn.className = 'btn btn-secondary';
+
       commentBtn.innerText = 'Comments';
 
       dishNamePara.innerText = strMeal;
