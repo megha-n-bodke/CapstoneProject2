@@ -1,4 +1,5 @@
 import { baseUrl, singlecard, involvementUrlLikes } from './getElements.js';
+import popupDisplay from './popupDisplay.js';
 import availableDishCount from './dishCount.js';
 import postLikes from './postLikes.js';
 // import { baseUrl, singlecard } from "./getElements.js";
@@ -86,6 +87,7 @@ const display = async () => {
       dishCount += 1;
       return dish;
     });
+    popupDisplay();
     availableDishCount(dishCount);
   } catch (error) {
     throw new Error(error.message);
