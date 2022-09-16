@@ -11,7 +11,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #34495e;
+  background-color: rgb(97, 105, 112);
   min-height: auto;
   width: 100%;
   height: auto;
