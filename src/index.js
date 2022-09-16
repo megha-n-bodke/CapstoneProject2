@@ -1,7 +1,7 @@
-import "./index.css";
+import './index.css';
 
-import display from "./modules/display.js";
+import display from './modules/display.js';
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   display();
 });
