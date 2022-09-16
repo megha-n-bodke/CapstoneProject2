@@ -1,21 +1,17 @@
-import { singlecard } from './getElements.js';
-import getMealsFromApi from './getMealsFromApi.js';
 import popupDisplay from './popupDisplay.js';
+import { baseUrl, singlecard } from './getElements.js';
+import availableDishCount from './dishCount.js';
 
 const display = async () => {
   try {
-    // console.log('inside display');
-    // const response = await fetch(baseUrl);
-
-    const { meals } = await getMealsFromApi();
-    // const { meals } = await response.json();
-    // console.log(meals);
+    const response = await fetch(baseUrl);
+    const { meals } = await response.json();
+    let dishCount = 0;
 
     meals.map((dish) => {
       // @sonick include idMeal in line number 12 with strMeal i have removed due to linter error.
       const { strMeal, strMealThumb } = dish;
 
-      // console.log(strCategory);
       const columnsDiv = document.createElement('div');
       columnsDiv.className = 'col-md-4';
 
@@ -40,7 +36,7 @@ const display = async () => {
       // div for likes
       const cardNameLikesDiv = document.createElement('div');
       const likesPara = document.createElement('p');
-      likesPara.innerText = 'Likes 0';
+      likesPara.innerText = '';
 
       const heart = document.createElement('i');
       heart.className = 'fa fa-heart';
@@ -67,12 +63,13 @@ const display = async () => {
 
       card.appendChild(buttonDiv);
       buttonDiv.appendChild(commentBtn);
-
-      return dish;
+      dishCount += 1;
+      return dishCount;
     });
     popupDisplay();
+    availableDishCount(dishCount);
   } catch (error) {
-    // console.error(error.message);
+    throw new Error(error.message);
   }
 };
 
