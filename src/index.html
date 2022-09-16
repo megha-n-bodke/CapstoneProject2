@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>All Meals</title>
+    <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -14,29 +15,68 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-light shadow">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <div class="logo-div">
+
+                </div>
+                <!--  <a class="navbar-brand" href="#"><img src="../images/logo2.png" class="img-fluid" alt="image">
+                </a>
+ -->
+                <!--    <a class="navbar-brand" href="#">
+                    <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"
+                        class="d-inline-block align-text-top">
+                    Bootstrap
+                </a> -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
+                        <li class="nav-item" id="meal-count">
                             Meal(0)
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">Contact</a>
                         </li>
                     </ul>
                 </div>
         </nav>
     </header>
 
+
+
+    <section>
+        <div class="row container-fluid" id="card-row">
+            <!-- <div class="col-md-4" id="card-columns">
+                <div class="card" style="width: 18rem;" id="single-card">
+                      <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                //dishname and likes
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text">Name of dish </p>
+
+                                    //likes section
+                                    <div><i class="fa fa-heart"></i>
+                                        <p>Likes 0</p>
+                                    </div> 
+                </div>
+            </div> -->
+        </div>
+    </section>
     <footer>
         <div id="footer">
             <p>Megha Bodke, Sonick Mumba © 2022 Capstone Project 2 <span class="vertical-line"></span> All Rights
                 Reserved</p>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
