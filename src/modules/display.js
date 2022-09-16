@@ -39,7 +39,6 @@ const display = async () => {
 
       // div for likes
       const findId = likes.find((like) => like.item_id === idMeal);
-
       const cardNameLikesDiv = document.createElement("div");
       const likesPara = document.createElement("p");
       if (findId === undefined) {
