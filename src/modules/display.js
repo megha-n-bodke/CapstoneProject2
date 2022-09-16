@@ -1,6 +1,9 @@
 import { baseUrl, singlecard, involvementUrlLikes } from './getElements.js';
+import popupDisplay from './popupDisplay.js';
 import availableDishCount from './dishCount.js';
 import postLikes from './postLikes.js';
+// import { baseUrl, singlecard } from "./getElements.js";
+// import availableDishCount from "./dishCount.js";
 
 const display = async () => {
   try {
@@ -13,7 +16,6 @@ const display = async () => {
     const likes = await likeCount.json();
 
     meals.map((dish) => {
-      // @sonick include idMeal in line number 12 with strMeal i have removed due to linter error.
       const { idMeal, strMeal, strMealThumb } = dish;
 
       const columnsDiv = document.createElement('div');
@@ -78,6 +80,7 @@ const display = async () => {
       dishCount += 1;
       return dish;
     });
+    popupDisplay();
     availableDishCount(dishCount);
   } catch (error) {
     throw new Error(error.message);
