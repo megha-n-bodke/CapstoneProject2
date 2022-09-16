@@ -45,7 +45,7 @@ body.pop {
   padding: 16px;
   gap: 12px;
   width: 50%;
-  height: 900px;
+  height: 950px;
   border: 2px solid #ebecf0;
   box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
   background: #fff;
@@ -142,6 +142,24 @@ body.pop {
   width: 70%;
   font-weight: 700;
   font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#comment-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.count-comments {
+  height: 30px;
+  width: 40px;
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
+  text-align: center;
+  margin-top: -25px;
 }
 
 .popup-comments-info .comment-header {
