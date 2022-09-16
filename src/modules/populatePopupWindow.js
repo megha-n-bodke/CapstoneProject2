@@ -2,6 +2,7 @@ import getMealsFromApi from './getMealsFromApi.js';
 import postComment from './postComment.js';
 import fetchComment from './fetchComment.js';
 import countComments from './countComments.js';
+import displayFetchedComments from './displayFetchedComment.js';
 
 const popImage = document.querySelector('.meal-img');
 const category = document.querySelector('.category');
@@ -25,37 +26,38 @@ async function populatePopupWindow(index) {
     e.preventDefault();
     const username = document.querySelector('#name').value;
     const comment = document.querySelector('#textarea').value;
+    
+    const commentDiv = document.querySelector('.show-comments');
     const itemId = e.target.id;
     const DataComment = {
       item_id: Number(itemId),
       username,
       comment,
     };
+    let d = new Date();
+    const currentDate = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate();
+    const div = document.createElement('div');
+    div.className = 'view-comments';
+    const date = document.createElement('p');
+    date.className = 'date-comment';
+    date.innerHTML = `${currentDate}`
+    const usernameComment = document.createElement('p');
+    usernameComment.className = 'username-comment';
+    usernameComment.innerHTML = `${username}:`;
+    const com = document.createElement('p');
+    com.innerHTML = `${comment}`;
+    div.append(date,usernameComment,com);
+    
+    commentDiv.appendChild(div);
+
     postComment(DataComment);
     document.querySelector('#name').value = '';
     document.querySelector('#textarea').value = '';
-  });
-  const comments = await fetchComment(itemId);
-  const numberOfComments = document.querySelector('.count-comments');
-  numberOfComments.innerHTML = `(${countComments(comments)})`;
-  const commentDiv = document.querySelector('.show-comments');
 
-  if (comments.length > 0) {
-    comments.forEach((comment) => {
-      commentDiv.innerHTML += `
-        <div class="view-comments">
-          <p class="date-comment">${comment.creation_date}</p>
-          <p class="username-comment">${comment.username}:</p>
-          <p>${comment.comment}</p>
-        </div>
-      `;
-    });
-  } else {
-    const noCommentDiv = document.createElement('p');
-    noCommentDiv.className = 'no-comment';
-    noCommentDiv.innerHTML = 'No comments Yet. Kindly add some!!';
-    commentDiv.appendChild(noCommentDiv);
-  }
+    const numberOfComments = document.querySelector('.count-comments');
+    numberOfComments.value = Number(numberOfComments.value) + 1;
+  });
+  displayFetchedComments(itemId);
 }
 
 export default populatePopupWindow;

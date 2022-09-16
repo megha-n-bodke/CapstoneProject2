@@ -136,6 +136,23 @@ body.pop {
   margin-bottom: 1rem;
 }
 
+#comment-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.count-comments {
+  height: 30px;
+  width: 40px;
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
+  text-align: center;
+  margin-top: -25px;
+}
+
 .popup-comments-info .comment-header {
   margin-bottom: 1rem;
   font-size: 1.2rem;
