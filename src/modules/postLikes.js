@@ -1,12 +1,12 @@
-import { involvementUrlLikes } from "./getElements.js";
+import { involvementUrlLikes } from './getElements.js';
 
 const postLikes = async (id, likesPara) => {
   try {
     await fetch(involvementUrlLikes, {
-      method: "POST",
+      method: 'POST',
 
       headers: {
-        "Content-type": "application/json",
+        'Content-type': 'application/json',
       },
 
       body: JSON.stringify({
@@ -17,12 +17,12 @@ const postLikes = async (id, likesPara) => {
     const likes = await likeCount.json();
     const findId = likes.find((like) => like.item_id === id);
     if (findId === undefined) {
-      likesPara.innerText = "Likes 0";
+      likesPara.innerText = 'Likes 0';
     } else {
       likesPara.innerText = `Likes ${findId.likes}`;
     }
   } catch (error) {
-    console.error(error.message);
+    throw new Error(error.message);
   }
 };
 
