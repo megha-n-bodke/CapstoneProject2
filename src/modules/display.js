@@ -67,7 +67,6 @@ const display = async () => {
       const commentBtn = document.createElement("button");
       buttonDiv.className = "card-actions";
       commentBtn.className = "btn btn-secondary";
-
       commentBtn.innerText = "Comments";
 
       dishNamePara.innerText = strMeal;
