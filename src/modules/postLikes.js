@@ -15,6 +15,7 @@ const postLikes = async (id, likesPara) => {
     });
     const likeCount = await fetch(involvementUrlLikes);
     const likes = await likeCount.json();
+
     const findId = likes.find((like) => like.item_id === id);
     if (findId === undefined) {
       likesPara.innerText = 'Likes 0';
