@@ -4,6 +4,9 @@
 
 > This project is part of our **Microverse** JavaScript capstone project, where we build our own web application based on an external API. This project follows the [best practices for HTML & CSS](https://github.com/microverseinc/curriculum-html-css/blob/main/articles/html_css_best_practices.md) as well as the [best practices for JavaScript](https://github.com/microverseinc/curriculum-html-css/blob/main/articles/javascript_best_practices.md).
 
+## Website Mockup 📱 💻 🖥️
+![Screen Shot 2022-09-17 at 8 01 10 AM](https://user-images.githubusercontent.com/106140591/190843018-3747517b-2bc9-4604-ab2a-a11049505dc7.png)
+
 ## Built With ⚙️
 
 - **Major languages**: HTML, CSS, & JavaScript.
