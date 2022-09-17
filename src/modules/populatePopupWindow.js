@@ -53,7 +53,7 @@ async function populatePopupWindow(index) {
     document.querySelector('#textarea').value = '';
 
     const numberOfComments = document.querySelector('.count-comments');
-    numberOfComments.value = Number(numberOfComments.value) + 1;
+    numberOfComments.value = `(${Number(numberOfComments.value) + 1})`;
   });
   displayFetchedComments(itemId);
 }
