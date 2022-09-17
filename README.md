@@ -19,7 +19,7 @@
 
 ## Live Demo (Deployed on GitHub Pages with SSL)
 
-[Live Demo Link](https://megha-n-bodke.github.io/CapstoneProject2/)
+[Live Demo Link](https://megha-n-bodke.github.io/CapstoneProject2/dist/)
 
 ## Video Presentation
 
