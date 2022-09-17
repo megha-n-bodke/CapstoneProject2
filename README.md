@@ -5,6 +5,10 @@
 - A home page showing a list of Meals items that you can "like."
 - A popup window with more data about an item that you can use to comment on it.
 
+## Website Mockup 📱 💻 🖥️
+
+![Screen Shot 2022-09-17 at 8 01 10 AM](https://user-images.githubusercontent.com/106140591/190843018-3747517b-2bc9-4604-ab2a-a11049505dc7.png)
+
 ## Built With ⚙️
 
 - **Major languages**: HTML, CSS, & JavaScript.
@@ -13,11 +17,21 @@
 - **Technologies used**: NPM, Webpack, & Jest Library.
 - **Tools**: Git, Gitflow, GitHub, VS Code, & Chrome Browser.
 
+## Live Demo (Deployed on GitHub Pages with SSL)
+
+[Live Demo Link]()
+
+## Video Presentation
+
+[Live Video Link]()
+
 ### Prerequisites
 
 - [x] Basic Knowledge of **HTML**, **CSS**, & **JavaScript**.
 - [x] Basic knowledge of **ES6** syntax.
+
 - [x] Basic knowledge of **Git** & **GitHub**.
+- [x] Basic knowledge of **Git**, **GitHub** &**Gitflow**.
 - [x] Basic knowledge of **Linters**.
 - [x] Basic knowledge of **Webpack**.
 - [x] Basic knowledge of **Jest** unit-testing library.
@@ -80,15 +94,19 @@ Showcase Meals Application
 - Twitter: [@Sonick](https://twitter.com/MumbaSonick)
 - LinkedIn: [Sonick Mumba](https://www.linkedin.com/in/sonick-m-301557a2/)
 
+### Deployment
+
+For deployment you can use the **[GitHub Pages](https://pages.github.com/)**.
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
-
-## Show your support
-
-Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
@@ -99,4 +117,6 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+# This project is [MIT](./MIT.md) licensed.
+
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._

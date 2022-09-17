@@ -20,7 +20,7 @@ const displayFetchedComment = async (itemId) => {
   } else {
     const noCommentDiv = document.createElement('p');
     noCommentDiv.className = 'no-comment';
-    noCommentDiv.innerHTML = 'No comments Yet. Kindly add some!!';
+    noCommentDiv.innerHTML = 'No comments yet.';
     commentDiv.appendChild(noCommentDiv);
   }
 };

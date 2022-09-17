@@ -21,6 +21,7 @@ const popupDisplay = () => {
     popupWindow.classList.remove('pop');
     body.classList.remove('pop');
     popupBg.classList.remove('pop');
+    window.location.reload();
   });
 };
 

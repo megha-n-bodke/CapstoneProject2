@@ -28,7 +28,7 @@ body {
   top: 0;
   bottom: 0;
   transform: scale(0);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.25s ease-in-out;
   overflow-y: scroll;
 }
 
@@ -48,8 +48,8 @@ body.pop {
   align-items: center;
   padding: 16px;
   gap: 12px;
-  width: 50%;
-  height: 950px;
+  width: 40%;
+  height: 960px;
   border: 2px solid #ebecf0;
   box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
   background: #fff;
@@ -58,8 +58,16 @@ body.pop {
   margin: 20px auto;
 }
 
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
 .popup-image-wrapper {
-  width: 65%;
+  width: 70%;
   height: 320px;
   margin: 50px 0 0 0;
   display: flex;
@@ -67,46 +75,22 @@ body.pop {
   align-items: center;
 }
 
-.popup-image-wrapper img {
+.meal-img {
+  box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
+  border-radius: 18px;
   width: 100%;
-  height: 100%;
-  margin: 0;
-}
-
-.button-div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  right: 0;
-  top: 40px;
-  left: 870px;
 }
 
 #close-btn {
-  width: 40px;
-  height: 40px;
-  left: 8px;
-  top: 8px;
-  margin-top: 12px;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  left: 40px;
+  top: -170px;
 }
 
 #close-btn:hover {
   cursor: pointer;
-}
-
-/* =========footer section========= */
-
-.image-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
 }
 
 .meal-title-container {
@@ -126,12 +110,13 @@ body.pop {
   flex-direction: column;
   gap: 20px;
   width: 85%;
+  margin-bottom: 1rem;
 }
 
 .meal-ratings {
   display: flex;
   justify-content: space-between;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 #video {
@@ -143,7 +128,7 @@ body.pop {
 }
 
 .popup-comments-info {
-  width: 70%;
+  width: 85%;
   font-weight: 700;
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -201,9 +186,9 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 50%;
+  width: 65%;
   height: 250px;
-  margin-right: 160px;
+  margin-right: 100px;
 }
 
 #name {
@@ -253,15 +238,13 @@ form {
   display: block;
 }
 
-/* end comment popup css */
+/* =========footer section========= */
 footer {
   position: fixed;
   bottom: 0;
   background-color: rgb(97, 105, 112);
-  min-height: auto;
   width: 100%;
-  height: 50px;
-  padding: 35px 65px;
+  padding: 25px 55px;
 }
 
 #footer > p {
@@ -270,6 +253,7 @@ footer {
   color: #fff;
   margin-bottom: 0;
   opacity: 0.8;
+  text-align: center;
 }
 
 #footer > p:hover {
